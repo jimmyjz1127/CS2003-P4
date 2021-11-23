@@ -26,12 +26,16 @@ function createJSON(csvFile)
 
     var json = [];//array to contain each movie in JSON format
 
-    var headers = lines[0].split(',');//split the header into its elements
-
+    var headers = ['id']
+    Array.prototype.push.apply(headers, lines[0].split(','));//split the header into its elements
+    
+    var id = 0;
     for (var i = 0; i < lines.length; i++)
     {
         var movie = {};
-        var line = lines[i].split(',');
+        var line = [id];
+        id += 1;
+        Array.prototype.push.apply(line, lines[i].split(','));
 
         for (var j = 0; j < headers.length; j++)
         {
@@ -42,4 +46,4 @@ function createJSON(csvFile)
     return JSON.stringify(json);
 }
 
-writeJSON('movie_metadata_subset.csv', 'movie_database.json');
+writeJSON('MovieDB/movie_metadata_subset.csv', 'MovieDB/movie_database.json');

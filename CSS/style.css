@@ -1,0 +1,78 @@
+#movie_table td,th
+{
+    border:1px solid black;
+    font-family: Helvetica;
+    font-size:14px;
+    padding:0.5px;
+    border-spacing:0px;
+}
+
+
+input
+{
+    font-family: Helvetica;
+    font-size:14px;
+    background-color:lightgray;
+    box-sizing:border-box;
+    /* border: 1px solid black; */
+    /* border-radius:2px; */
+}
+
+#background
+{
+    height:100%;
+    width:100%;
+}
+
+#background > *
+{
+    z-index:0;
+}
+
+#background_color
+{
+    
+}
+
+#edit_div
+{
+    margin:auto;
+    display: none;
+    background-color:lightyellow;
+    position: fixed;
+    border: 3px solid black;
+    z-index:1;
+}
+
+#edit_div h2
+{
+    text-align:center;
+}
+
+#edit_table td,th
+{
+    height: 100px;
+    padding:1px;
+}
+
+textarea
+{
+    height:100%;
+    width:100%;
+}
+
+#edit_submit
+{
+    margin:auto;
+    font-size:30px;
+}
+
+
+
+
+
+
+
+
+
+

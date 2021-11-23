@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IMDB Movies Database</title>
+        <link rel='stylesheet' href='style.css'>
+    </head>
+    <body>
+        <div id='background_color'>
+            <div id='edit_div'>
+                    <form id='edit_form' onsubmit='return saveEdit("edit_form")'>
+                        <h2>FILL OUT MOVIE DETAILS</h2>
+                        <table id='edit_table'>
+                            <tr>
+                                <th>ID</th>
+                                <th>Director Name</th>
+                                <th>Actor 2</th>
+                                <th>Genres</th>
+                                <th>Actor 1</th>
+                                <th>Movie Title</th>
+                                <th>Actor 3</th>
+                                <th>Plot Keywords</th>
+                                <th>IMDB Link</th>
+                            </tr>
+                            <tr>
+                            </tr>
+                        </table>
+                        <input id='edit_submit' type='submit' value='Submit'/>
+                    </form>
+            </div>
+            <div id='background'>
+                <h1>IMDB Movie Database</h1>
+                <table id='movie_table'>
+                </table>
+            </div>
+        </div>
+        <script type='text/javascript' src='MainClient.js'></script>
+    </body>
+</html>
