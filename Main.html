@@ -3,36 +3,79 @@
     <head>
         <title>IMDB Movies Database</title>
         <link rel='stylesheet' href='style.css'>
+        <link rel="shortcut icon" href="">
     </head>
     <body>
-        <div id='background_color'>
-            <div id='edit_div'>
-                    <form id='edit_form' onsubmit='return saveEdit("edit_form")'>
-                        <h2>FILL OUT MOVIE DETAILS</h2>
-                        <table id='edit_table'>
-                            <tr>
-                                <th>ID</th>
-                                <th>Director Name</th>
-                                <th>Actor 2</th>
-                                <th>Genres</th>
-                                <th>Actor 1</th>
-                                <th>Movie Title</th>
-                                <th>Actor 3</th>
-                                <th>Plot Keywords</th>
-                                <th>IMDB Link</th>
-                            </tr>
-                            <tr>
-                            </tr>
-                        </table>
-                        <input id='edit_submit' type='submit' value='Submit'/>
-                    </form>
-            </div>
-            <div id='background'>
-                <h1>IMDB Movie Database</h1>
-                <table id='movie_table'>
+        <!----------- The add-movie form div for adding new movie entry ---------->
+        <div id='add_div'>
+            <form id='add_form' onsubmit='return saveEdit("add_form", "Add")'>
+                <h2>FILL OUT MOVIE DETAILS</h2>
+                <table id='edit_table'>
+                    <tr>
+                        <th>Director Name</th>
+                        <th>Actor 2</th>
+                        <th>Genres</th>
+                        <th>Actor 1</th>
+                        <th>Movie Title</th>
+                        <th>Actor 3</th>
+                        <th>Plot Keywords</th>
+                        <th>IMDB Link</th>
+                    </tr>
+                    <tr>
+                    </tr>
                 </table>
-            </div>
+                <div class='wrapper'>
+                    <input class='submit_btn' type='submit' value='Submit'/>
+                    <input class='cancel_btn' type='button' value='Cancel' onclick='cancelForm("add_form", "add_div")' />
+                </div>
+            </form>
+        </div> 
+        <!-------------- The edit form div for editing existing movie entries ---------------->
+        <div id='edit_div'>
+                <form id='edit_form' onsubmit='return saveEdit("edit_form","Edit")'>
+                    <h2>EDIT OUT MOVIE DETAILS</h2>
+                    <table id='edit_table'>
+                        <tr>
+                            <th>ID</th>
+                            <th>Director Name</th>
+                            <th>Actor 2</th>
+                            <th>Genres</th>
+                            <th>Actor 1</th>
+                            <th>Movie Title</th>
+                            <th>Actor 3</th>
+                            <th>Plot Keywords</th>
+                            <th>IMDB Link</th>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </table>
+                    <div class='wrapper'>
+                        <input class='submit_btn' type='submit' value='Submit'/>
+                        <input class='cancel_btn' type='button' value='Cancel' onclick='cancelForm("edit_form", "edit_div")' />
+                    </div>
+                </form>
         </div>
+        <!------------------------ Movie Table div ------------------------->
+        <div id='background'>
+            <h1>IMDB Movie Database</h1>
+            <div class='wrapper'>
+                <input id='add_movie_btn' type='button' value='Add Movie Entry' onclick='addMovie()'/>
+            </div>
+            <table id='movie_table'>
+                <tr>
+                    <th>ID</th>
+                    <th>Director Name</th>
+                    <th>Actor 2</th>
+                    <th>Genres</th>
+                    <th>Actor 1</th>
+                    <th>Movie Title</th>
+                    <th>Actor 3</th>
+                    <th>Plot Keywords</th>
+                    <th>IMDB Link</th>
+                </tr>
+            </table>
+        </div>
+
         <script type='text/javascript' src='MainClient.js'></script>
     </body>
 </html>

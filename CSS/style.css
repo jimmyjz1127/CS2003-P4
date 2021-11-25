@@ -1,21 +1,14 @@
-#movie_table td,th
+/* ------------------------General Page Styling -------------------- */
+html
 {
-    border:1px solid black;
-    font-family: Helvetica;
-    font-size:14px;
-    padding:0.5px;
-    border-spacing:0px;
+    background-color:black;
 }
 
-
-input
+h1
 {
-    font-family: Helvetica;
-    font-size:14px;
-    background-color:lightgray;
-    box-sizing:border-box;
-    /* border: 1px solid black; */
-    /* border-radius:2px; */
+    color:white;
+    text-align:center;
+    font-size:45px;
 }
 
 #background
@@ -29,10 +22,58 @@ input
     z-index:0;
 }
 
-#background_color
+.wrapper
 {
-    
+    text-align:center;
 }
+
+#add_movie_btn
+{
+    font-size:20px;
+}
+
+#add_movie_btn:hover
+{
+    background-color:lightgreen;
+}
+/* --------------------- Movie Table Styling ----------------------- */
+
+#movie_table
+{
+    border:1px solid black; 
+    background-color:white;
+    margin:auto;
+    width:90%;
+    height:90%;
+    border-spacing:0px;
+    border-radius:10px;
+}
+#movie_table td,th
+{
+    text-align:center;
+    border:1px solid black; 
+    font-family: Helvetica;
+    font-size:15px;
+    padding:0.5px;
+    min-width:50px;
+    padding:1px;
+}
+
+#movie_table input
+{
+    font-family: Helvetica;
+    font-size:14px;
+    background-color:lightgray;
+    box-sizing:border-box;
+}
+
+._btn
+{
+    font-size:15px;
+    border:none;
+}
+
+/* ------------------- Edit Movie Form Styling ------------------- */
 
 #edit_div
 {
@@ -42,31 +83,93 @@ input
     position: fixed;
     border: 3px solid black;
     z-index:1;
+    width:100%;
 }
 
-#edit_div h2
+#edit_table
+{
+    margin:auto;
+    border-spacing: 0px;
+    border:0px;
+}
+
+#edit_table > td
+{
+    border:0px;
+    height: 100px;
+    border:0;
+}
+
+#edit_table > th
+{
+    border:0px;
+    height: 100px;
+    border:0;
+}
+
+/* -------------------Add Movie Form Styling -------------------- */
+
+#add_div
+{
+    margin:auto;
+    display: none;
+    background-color:lightyellow;
+    position: fixed;
+    border: 3px solid black;
+    z-index:1;
+    width:100%;
+}
+
+#add_table
+{
+    margin:auto;
+    width:100%;
+    border-spacing: 0px;
+    border:0px;
+}
+
+#add_table > td
+{
+    height: 100px;
+    border:0;
+}
+
+#add_table > th
+{
+    height: 100px;
+    border:0;
+}
+/* --------------------General Form Styling --------------------- */
+
+text
+{
+    width:100%;
+    box-sizing:border-box;
+}
+
+.cancel_btn
+{
+    margin:auto;
+    font-size:30px;
+}
+
+h2
 {
     text-align:center;
 }
 
-#edit_table td,th
+.submit_btn
 {
-    height: 100px;
-    padding:1px;
+    margin:auto;
+    font-size:30px;
 }
 
 textarea
 {
     height:100%;
     width:100%;
+    box-sizing:border-box;
 }
-
-#edit_submit
-{
-    margin:auto;
-    font-size:30px;
-}
-
 
 
 

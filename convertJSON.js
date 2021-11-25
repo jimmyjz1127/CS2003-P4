@@ -28,16 +28,15 @@ function createJSON(csvFile)
 
     var headers = ['id']
     Array.prototype.push.apply(headers, lines[0].split(','));//split the header into its elements
-    
-    var id = 0;
+
     for (var i = 0; i < lines.length; i++)
     {
-        var movie = {};
-        var line = [id];
-        id += 1;
-        Array.prototype.push.apply(line, lines[i].split(','));
+        var movie = {};//Initialize JSON object
+        var line = [i];//create an ID
 
-        for (var j = 0; j < headers.length; j++)
+        Array.prototype.push.apply(line, lines[i].replace("\'", '&#39;').split(','));//append movie details to ID 
+
+        for (var j = 0; j < headers.length; j++)//setup key,value pairs in JSON
         {
             movie[headers[j]] = line[j];
         }
