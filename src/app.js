@@ -9,9 +9,9 @@ function runServer()
     //GET main HTML page 
     app.get('/', (req,res) => res.sendFile(__dirname + '/Main.html'));
     //GET main HTML page script
-    app.get('/MainClient.js', (req,res) => res.sendFile(__dirname + '/MainClient.js'));
+    app.get('/client.js', (req,res) => res.sendFile(__dirname + '/client.js'));
     //GET main HTML page CSS
-    app.get('/style.css', (req,res) => res.sendFile(__dirname +'/CSS/style.css'));
+    app.get('/style.css', (req,res) => res.sendFile(__dirname +'/style.css'));
     //GET the movie database JSON file
     app.get('/movie_database.json', (req,res) => res.sendFile(__dirname + '/MovieDB/movie_database.json'));
 

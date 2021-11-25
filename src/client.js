@@ -169,7 +169,7 @@ function validateForm(formData)
     var result = true;
     formData.forEach((value,key) => 
     {
-        if (key=='director_name' || key=='actor_1_name' || key=='movie_title' || key=='Genres' || key=='movie_imdb_link')
+        if (key=='director_name' || key=='actor_1_name' || key=='movie_title' || key=='genres' || key=='movie_imdb_link')
         {
             if (value.length == 0)
             {
