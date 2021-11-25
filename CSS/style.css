@@ -11,6 +11,11 @@ h1
     font-size:45px;
 }
 
+td
+{
+    background-color:white;
+}
+
 #background
 {
     height:100%;
@@ -67,10 +72,22 @@ h1
     box-sizing:border-box;
 }
 
-._btn
+.movie_btn
 {
     font-size:15px;
+    box-sizing:border-box;
+    width:100%;
     border:none;
+}
+
+#edit_btn:hover
+{
+    background-color:lightgreen;
+}
+
+#delete_btn:hover
+{
+    background-color:red;
 }
 
 /* ------------------- Edit Movie Form Styling ------------------- */
@@ -98,6 +115,7 @@ h1
     border:0px;
     height: 100px;
     border:0;
+    text-align:center;
 }
 
 #edit_table > th
@@ -139,11 +157,15 @@ h1
     height: 100px;
     border:0;
 }
+
 /* --------------------General Form Styling --------------------- */
 
 text
 {
+    height:100%;
     width:100%;
+    box-sizing:border-box;
+    text-align:center;
     box-sizing:border-box;
 }
 
@@ -151,6 +173,12 @@ text
 {
     margin:auto;
     font-size:30px;
+    border-radius:8px;
+}
+
+.cancel_btn:hover
+{
+    background-color:lightgrey;
 }
 
 h2
@@ -162,6 +190,12 @@ h2
 {
     margin:auto;
     font-size:30px;
+    border-radius:8px;
+}
+
+.submit_btn:hover
+{
+    background-color:lightgray;
 }
 
 textarea
@@ -169,7 +203,9 @@ textarea
     height:100%;
     width:100%;
     box-sizing:border-box;
+    text-align:center;
 }
+
 
 
 

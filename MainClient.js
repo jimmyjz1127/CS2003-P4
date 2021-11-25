@@ -1,5 +1,8 @@
 window.onload = createMovieTable();
 
+/**
+ * Populates movie HTML table with movie entries based on database JSON file
+ */
 function createMovieTable()
 {
     var xhttp = new XMLHttpRequest();
@@ -8,13 +11,13 @@ function createMovieTable()
     {
         if (this.readyState == 4 && this.status == 200)
         {
-            var movies = JSON.parse(this.responseText);
+            var movies = JSON.parse(this.responseText);//parse JSON String 
             
             for (var i = 1; i < movies.length; i++)
             {
                 var movieData = new Map(Object.entries(movies[i])); //put each movie json data into map
     
-                var id = movies[i].id;
+                var id = movies[i].id;//movie ID
                 
                 var output = '<tr id=\'' + id + '\'>';
                 for (var [key,value] of movieData.entries())
@@ -25,12 +28,12 @@ function createMovieTable()
                     }
                     else
                     {
-                        output += '<td>' + value + '</td>';
+                        output += '<td>' + value + '</td>';//add movie entry to movietable
                     }
                 }
                 output += '<td class=\'edit_cell\'>' 
-                            + '<input class=\'movie_btn\' type=\'button\' value=\'Edit\' onclick=\'editMovie(' + JSON.stringify(movies[i]) + ')\' />'
-                            + '<input class=\'movie_btn\' type=\'button\' value=\'Delete\' onclick=\'deleteMovie(' + id + ')\' />'
+                            + '<input id=\'edit_btn\' class=\'movie_btn\' type=\'button\' value=\'Edit\' onclick=\'editMovie(' + JSON.stringify(movies[i]) + ')\' />'
+                            + '<input id=\'delete_btn\' class=\'movie_btn\' type=\'button\' value=\'Delete\' onclick=\'deleteMovie(' + id + ')\' />'
                         +'</td>';
                 output += '</tr>';
                 
@@ -43,7 +46,7 @@ function createMovieTable()
 }
 
 /**
- * Deletes movie from database
+ * Deletes movie from database - removes movie from database JSON file then regenerates movie table with updated JSON file
  * @param id : id of movie to delete 
  */
 function deleteMovie(id)
@@ -61,11 +64,11 @@ function deleteMovie(id)
                 var movieTable = document.getElementById('movie_table');
                 var tbody = movieTable.getElementsByTagName('tbody');
                 var len = tbody.length;
-                for (var i = 1; i < len; i+=1)
+                for (var i = 1; i < len; i+=1)//clear movie table entries
                 {
                     movieTable.removeChild(tbody[1]);
                 }
-                createMovieTable();
+                createMovieTable();//regenerate table movie entries
             }
         }
 
@@ -84,12 +87,12 @@ function addMovie()
     var addForm = document.getElementById('add_form')
     var row = addForm.getElementsByTagName('tr')[1];
     row.innerHTML += '<input type=\'hidden\' name=\'id\' />';
-    for (var i = 0; i < keys.length; i++)
+    for (var i = 0; i < keys.length; i++)//generate form inputs for adding movies
     {
         row.innerHTML += '<td><textarea name=\'' + keys[i] + '\'></textarea></td>';
     }
     document.getElementById('background').style.filter='blur(5px)';//blur background
-    document.getElementById('add_div').style.display='block';//make editing form visible
+    document.getElementById('add_div').style.display='block';//make add movie form visible
 }
 
 /**
@@ -129,7 +132,7 @@ function saveEdit(formID, url)
 
     if (validateForm(new FormData(form)) == false)
     {
-        alert('Required field left empty!');
+        alert('Required field left empty!');//alert client if invalid
         return false;
     }
 
