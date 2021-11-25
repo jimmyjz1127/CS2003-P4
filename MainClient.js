@@ -48,29 +48,31 @@ function createMovieTable()
  */
 function deleteMovie(id)
 {
-    var json = {id : id};
-
-    var xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function()
+    if (confirm('Are you sure you want to delete this movie?'))
     {
-        if (this.status == 200 && this.readyState == 4)
+        var json = {id : id};
+
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function()
         {
-            var movieTable = document.getElementById('movie_table');
-            var tbody = movieTable.getElementsByTagName('tbody');
-            var len = tbody.length;
-            for (var i = 1; i < len; i+=1)
+            if (this.status == 200 && this.readyState == 4)
             {
-                movieTable.removeChild(tbody[1]);
+                var movieTable = document.getElementById('movie_table');
+                var tbody = movieTable.getElementsByTagName('tbody');
+                var len = tbody.length;
+                for (var i = 1; i < len; i+=1)
+                {
+                    movieTable.removeChild(tbody[1]);
+                }
+                createMovieTable();
             }
-            createMovieTable();
         }
+
+        xhttp.open('POST', 'Delete', true);
+        xhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        xhttp.send(JSON.stringify(json));
     }
-
-    xhttp.open('POST', 'Delete', true);
-    xhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    xhttp.send(JSON.stringify(json));
-
 }
 /**
  * Generates the form for adding a new movie entry to database
