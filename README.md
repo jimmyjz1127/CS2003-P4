@@ -12,6 +12,6 @@ HOW TO RUN:
     node convertJSON : to generate JSON file for movie database
     node app         : to start server 
 
-    (Access webapge through port 22054)
+    (Access webapge through http://127.0.0.1:22054)
 
 
